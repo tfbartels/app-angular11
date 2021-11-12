@@ -1,0 +1,15 @@
+<p>Interpolação: {{url}} </p>
+<p>Property binding (Valor do componente para o template): </p>
+<img [src]="url" alt="Image" height="250" width="400"/>
+<br>
+<p>Eventy binding (Valor do template para o componente): </p>
+<button mat-raised-button (click)="cliqueBotao()">Clique</button>
+
+<br><br>
+<p>Two way data binding: </p>
+<mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Input</mat-label>
+    <input matInput type="text" [(ngModel)]="valor">   
+</mat-form-field>
+
+<p>{{valor}}</p>

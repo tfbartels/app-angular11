@@ -1,0 +1,19 @@
+<mat-card>
+    <h2>Contador 1 - Passagem parâmetro entre componentes</h2>
+    <h3>{{counter1}}</h3>
+    <button mat-raised-button color="warn" (click)="decrementaCounter1()">-</button>
+    <button mat-raised-button color="primary" (click)="incrementaCounter1()" >+</button>
+
+    <br><br>
+
+    <h2>Contador 2 - NgRx</h2>
+    <h3>{{counter2$ | async}}</h3>
+    <button mat-raised-button color="warn" (click)="decrementaCounter2()">-</button>
+    <button mat-raised-button color="primary" (click)="incrementaCounter2()" >+</button>
+    <button mat-raised-button (click)="resetaCounter2()">Limpar</button>
+
+    <br><br>
+    <strong>{{mensagem}}</strong>
+    <br>
+    <app-show-contador [counter1]="counter1" (emitirMensagemPai)="recebeMensagemFilho($event)"></app-show-contador>
+</mat-card>
